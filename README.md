@@ -46,7 +46,7 @@ Let's say we wanted to change this class to use several `boolean` variables inst
 
 Other developers may also find it difficult to use this class. What value should I expect from `getColor`? If I call `setColor`, can I provide any value or do I need to provide specific values? Is it valid to say `setColor('black')`? They would have to carefully examine the source file, find documentation, or ask the developer that wrote the class.
 
-Ideally, it should be _obvious_ to other developers how to use a class from the methods it exposes and nothing more. Here is a better version of the `TrafficLight` class that is _well encapsulated_:
+Ideally, it should be _obvious_ to other developers how to use a class from the methods it exposes and nothing more. Here is a better version of the `TrafficLight` class that is _well abstracted_:
 
 ```javascript
 class TrafficLight {
