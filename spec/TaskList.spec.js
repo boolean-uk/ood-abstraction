@@ -13,7 +13,6 @@ describe("TaskList", () => {
   })
 
   it("returns overdue tasks", () => {
-    
     //None of these should be overdue
     taskList.addTask(new Task(todayPlusDays(1), "due tomorrow"))
     taskList.addTask(new Task(null, "no due date"))
