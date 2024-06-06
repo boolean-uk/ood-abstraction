@@ -8,28 +8,22 @@ class TaskList {
     this.tasks.push(task)
   }
 
-  incompletedTasks(){
-    const incompletedTasks = this.tasks.filter((task) => {
-      task.status === 'incomplete'
-    })
-    return incompletedTasks
-  }
-
-  hasDateDue(){
-    const dateDueTasks = this.tasks.filter((task) => {
-      task.dateDue !== null
-    })
-    return dateDueTasks
-  }
-
-  overdueTasks(){
+  getOverdueTasks() {
     const today = new Date()
     const overdueTasks = []
-    this.tasks.filter((task) => {
-      if(today > task.dateDue && task.status === "incomplete" && task.dateDue !== null){
-        overdueTasks.push(task)
+    for (const task of this.tasks) {
+      //it's not been completed
+      if (task.iscompleted()) {
+        //if it has a due date
+        if (task.hasDateDue()) {
+          //if the due date has passed then the task is overdue
+          if (isOverduo(today)) {
+            overdueTasks.push(task)
+          }
+        }
       }
-    })
+    }
+
     return overdueTasks
   }
 }
