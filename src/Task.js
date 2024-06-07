@@ -6,6 +6,14 @@ class Task {
     this.description = description
     this.status = "incomplete"
   }
+
+  iscompleted(){
+    return this.status === 'incomplete'
+  }
+
+  hasDateDue(){
+    return this.dateDue !== null
+  }
 }
 
 module.exports = Task
